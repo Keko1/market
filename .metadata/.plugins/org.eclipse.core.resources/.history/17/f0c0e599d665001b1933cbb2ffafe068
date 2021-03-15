@@ -1,0 +1,9 @@
+import javax.servlet.http.HttpServlet;
+import java.io.*;
+import java.util.*;
+import java.sql.*;
+import javax.servlet.http.*;
+
+public class Controller extends HttpServlet {
+	
+}

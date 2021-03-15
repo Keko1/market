@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,java.util.*"%>
+<%
+String fname=request.getParameter("fname");
+String lname=request.getParameter("lname");
+String phone=request.getParameter("phone");
+String email=request.getParameter("email");
+String pass1=request.getParameter("password");
+try
+{
+	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+	String connectionUrl = "jdbc:sqlserver://KEKO;database=market;integratedSecurity=true;";  
+	Connection con = DriverManager.getConnection(connectionUrl); 
+	Statement st= con.createStatement();
+	int i=st.executeUpdate("insert into customers(customer_id,first_name,last_name,email,phone,password)values('"+1+"','"+fname+"','"+lname+"','"+email+"','"+phone+"','"+pass1+"')");
+	out.println("Thank you for registering ");
+	
+}
+catch(Exception e)
+{
+System.out.print(e);
+e.printStackTrace();
+}
+
+%>

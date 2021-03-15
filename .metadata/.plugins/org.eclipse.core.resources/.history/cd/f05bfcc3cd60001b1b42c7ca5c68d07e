@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<title>KGeX Market</title>
+</head>
+<h1>KGeX Market</h1>
+
+<h2>sign up</h2>
+
+<script src="regest.jsp"></script>
+
+<form method="post" action="regest.jsp">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br>
+
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br>
+
+  <label for="email">Email address</label>
+  <input type="email" id="email" name="email"><br>
+
+  <label for="phone number"> Phone number: </label>
+  <input type="tel" id ="phone" name="phone number"><br>
+
+  <label for="password">password: </label>
+  <input type="password" name="password" id="pass1"><br>
+
+  <label for="password">confirm password: </label>
+  <input type="password" name="password2" id="pass2">
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

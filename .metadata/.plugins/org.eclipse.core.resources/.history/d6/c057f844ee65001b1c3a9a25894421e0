@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Welcome to KGeX Market</title>
+<link type="text/css" href="bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script src=bootstrap/js/boosted.min.js></script>
+<script type="text/javascript">
+	function validate(){ 
+	var pass1 = document.getElementById("pass1").value;
+	var pass2 = document.getElementById("pass2").value;
+	if (pass1 != pass2)
+	{ 
+		alert("Passwords do not match");
+		return false;
+	} else if (pass1.length < 6){
+		alert("Password should not be less than 6 characters");
+		return false;
+	}
+	</script>
+</head>
+<body>
+	<div class="">
+		<form method="post" action="LoginController" onsubmit="validate()">
+			<label class="col-md-2">First name: </label class="col-md-2"> <input class="input"
+				type="text" required="required" id="fname" name="fname"><br>
+			<label class="col-md-2">Last name:</label class="col-md-2"> <input class="input"
+				type="text" id="lname" name="lname"><br> <label
+				class="col-md-2">Phone:</label class="col-md-2"> <input class="input" type="tel"
+				id="telnum" name="telnum"><br> <label class="col-md-2">Email:</label class="col-md-2">
+			<input class="input" type="email" required="required" id="email"
+				name="email"><br> <label class="col-md-2">Password:</label class="col-md-2">
+			<input class="input" type="password" required="required" id="pass1"
+				name="pass1"><br> <label class="col-md-2">Confirm
+				Password:</label class="col-md-2"> <input class="input" type="password" required="required"
+				id="pass2" name="pass2"><br>
+			<button class="btn btn-success" type="submit">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

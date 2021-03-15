@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.io.*" %>
+<%@ page import = "java.util.*" %>
+<%@ page import = "java.sql.*" %>
+<%@ page import = "java.sql.DriverManager" %>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "java.sql.Connection" %>
+<%@ page import = "java.sql.Statement" %>
+<%@ page import = "java.sql.SQLException" %>
+<%@ page import = "java.lang.System" %>
+<%@ page import = "javax.servlet.http.*" %>
+<%		
+	String first_name = request.getParameter("fname"); 
+	String last_name = request.getParameter("lname");
+	String phone = request.getParameter("telnum");
+	String email = request.getParameter("email");
+	String password = request.getParameter("pass1");
+	
+	try{	
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost;DatabaseName=market;user=sa;password=123;");
+        Statement st = conn.createStatement();
+		st.executeUpdate("insert into customers (first_name,last_name,email,phone,password ) values('" + first_name + "', '" + last_name + "', '" + email + "', '" + phone + "', '" + password + "');");
+        //system.out.println("coon:"+conn);
+}
+	catch(Exception e){
+		System.out.print(e);
+		e.printStackTrace();
+		System.exit(0);
+}
+%>
+<html>
+<head> 
+<meta charset=utf-8>
+<title>Login Page</title>
+</head><body>
+<h1>Login</h1>
+	<div class="">
+		<form method="post" action="home.jsp" onsubmit="return login.jsp" >
+		  <label class="col-md-2">Email:</label class="col-md-2">
+  		  <input class="input" type="email" id="email" name="email"><br>
+  		  <label class="col-md-2">Password</label class="col-md-2">
+  		  <input class="input" type="password" id="pass" name="pass"><br>
+  		  <button class="btn btn-success" type="submit">Login</button>
+</body>
+</html>

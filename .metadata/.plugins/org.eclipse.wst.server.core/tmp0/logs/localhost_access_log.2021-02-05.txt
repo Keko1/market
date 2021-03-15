@@ -1,0 +1,7 @@
+127.0.0.1 - - [05/Feb/2021:22:09:41 -0800] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [05/Feb/2021:22:09:42 -0800] "GET /Market/home.jsp HTTP/1.1" 200 1752
+0:0:0:0:0:0:0:1 - - [05/Feb/2021:22:09:42 -0800] "GET /Market/validate.js HTTP/1.1" 200 691
+0:0:0:0:0:0:0:1 - - [05/Feb/2021:22:09:42 -0800] "GET /Market/bootstrap/js/boosted.min.js HTTP/1.1" 200 70675
+0:0:0:0:0:0:0:1 - - [05/Feb/2021:22:09:42 -0800] "GET /Market/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 153182
+0:0:0:0:0:0:0:1 - - [05/Feb/2021:22:09:42 -0800] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [05/Feb/2021:22:12:32 -0800] "POST /Market/RegisterController HTTP/1.1" 200 515

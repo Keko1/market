@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import= "java.util.*, java.sql.*, javax.servlet.http.*, com.microsoft.sqlserver.jdbc.*"%>
+
+<%
+	String first_name = request.getParameter("fname"); 
+	String last_name = request.getParameter("lname");
+	String phone = request.getParameter("telnum");
+	String email = request.getParameter("email");
+	String password = request.getParameter("pass1");
+	
+	String jdbcDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	String jdbcURL = "jdbc:sqlserver://localhost:1433;Databasename=market;user=sa;password=GexX1234;"; 
+	try {
+		Class.forName(jdbcDriver).newInstance();
+		Connection conn = DriverManager.getConnection(jdbcURL);
+		Statement st = conn.createStatement();
+		st.executeQuery("insert into customers values('" + first_name + "', '" + last_name + "', '" + phone + "', '" + email + "', '" + password + "');");
+	} catch (Exception e) {
+		e.printStackTrace(System.err);
+	    System.exit(0);
+	}
+ %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registered successfully</title>
+</head>
+<body>
+
+</body>
+</html>
